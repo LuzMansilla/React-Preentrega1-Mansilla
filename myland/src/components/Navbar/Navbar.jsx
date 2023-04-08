@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 
-const NavBarr =()=>{
+const NavBar =()=>{
     return(
         <nav>
             <Navbar bg="dark" variant="dark">
@@ -24,4 +24,4 @@ const NavBarr =()=>{
     )
 }
 
-export default NavBarr
+export default NavBar
