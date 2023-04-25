@@ -1,3 +1,8 @@
+.cartwidget{
+    display: flex;
+    flex-direction: row-reverse;
+    color:aliceblue;
+}
 img{
     height: 30px;
     width: 40px;

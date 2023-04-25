@@ -1,25 +1,29 @@
+import { Link, NavLink} from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import './Navbar.css'
 
 
 const NavBar =()=>{
+
     return(
         <nav>
             <Navbar bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand href="#home">MY LAND</Navbar.Brand>
-            <Nav className="me-auto">
-                <Nav.Link href="#cuadrosDeAcrilico">Cuandros de Acrílico</Nav.Link>
-                <Nav.Link href="#cuadrosDePasteles">Cuadros de Pasteles</Nav.Link>
-                <Nav.Link href="#cuadrosDeLapiz">Cuadros de Lápiz</Nav.Link>
-            </Nav>
+                <Link to = '/' >
+                    <Navbar.Brand>
+                        <img src="/public/ML.png" className="imagen"></img>MY LAND</Navbar.Brand>
+                </Link>
+                <Nav className="me-auto">
+                    <NavLink to={`/category/Acrilico`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuandros de Acrílico</NavLink>
+                    <NavLink to={`/category/Pasteles`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuadros de Pasteles</NavLink>
+                    <NavLink to={`/category/Lapiz`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuadros de Lápiz</NavLink>
+                </Nav>
             </Container>
-            </Navbar>
-            <br />
             <CartWidget/>
-            <br />
+            </Navbar>
         </nav>
     )
 }
