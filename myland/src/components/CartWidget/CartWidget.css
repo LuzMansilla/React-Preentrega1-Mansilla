@@ -1,9 +1,11 @@
 .cartwidget{
     display: flex;
     flex-direction: row-reverse;
-    color:aliceblue;
-}
-img{
     height: 30px;
     width: 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+div{
+    color:rgb(33, 250, 70);
 }

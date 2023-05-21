@@ -1,15 +1,22 @@
 import { useCounter } from "./UseCounter"
+import cart from '/public/cart.svg'
 
+import './ItemCount.css'
 
-const ItemCount = ({initial = 0, stock = 5, onAdd }) =>{
+const ItemCount = ({initial = 1, stock = 5, onAdd }) =>{
+
     const{counter, handleSumar, handleRestar} = useCounter(initial, 1, stock)
 
     return(
-        <div>
-            <p>Clicks : {counter}</p>
-            <button onClick={handleSumar}>+ 1</button> 
-            <button onClick={handleRestar}>- 1</button> 
-            <button>Agregar al Carrito</button>
+        <div className="contador">
+            <button onClick={handleRestar}className="btn btn-outline-warning">-</button>
+            <label id="carro">
+                <img src={cart} alt="" className="carro"/>  
+                <div className="counter">{counter}</div>
+            </label>
+            <button onClick={handleSumar} className="btn btn-outline-warning">+</button> 
+            <br /> 
+            <button onClick={()=>{onAdd(counter)}} className="btn btn-warning">Agregar al Carrito</button>
         </div>
     )
 }

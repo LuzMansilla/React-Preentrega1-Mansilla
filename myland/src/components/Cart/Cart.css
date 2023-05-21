@@ -1,0 +1,22 @@
+.totalDeCompra{
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+label{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+p{
+    color: greenyellow;
+    font-weight: bold;
+    font-size: 30px;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}

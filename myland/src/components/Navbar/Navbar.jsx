@@ -14,15 +14,15 @@ const NavBar =()=>{
             <Container>
                 <Link to = '/' >
                     <Navbar.Brand>
-                        <img src="/public/ML.png" className="imagen"></img>MY LAND</Navbar.Brand>
+                        <img src="/ML.png" className="imagen"></img>MY LAND</Navbar.Brand>
                 </Link>
                 <Nav className="me-auto">
-                    <NavLink to={`/category/Acrilico`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuandros de Acrílico</NavLink>
-                    <NavLink to={`/category/Pasteles`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuadros de Pasteles</NavLink>
-                    <NavLink to={`/category/Lapiz`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-outline-dark'}>Cuadros de Lápiz</NavLink>
+                    <NavLink to={`/category/Acrilico`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-dark'}>Cuadros de Acrílico</NavLink>
+                    <NavLink to={`/category/Pasteles`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-dark'}>Cuadros de Pasteles</NavLink>
+                    <NavLink to={`/category/Lapiz`} className={({isActive}) => isActive ? 'btn btn-light' : 'btn btn-dark'}>Cuadros de Lápiz</NavLink>
                 </Nav>
-            </Container>
             <CartWidget/>
+            </Container>
             </Navbar>
         </nav>
     )

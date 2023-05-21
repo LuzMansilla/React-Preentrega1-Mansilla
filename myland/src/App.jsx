@@ -1,17 +1,20 @@
 import {Navigate, Route, BrowserRouter as Router,Routes} from 'react-router-dom'
-import NavBar from './components/Navbar/Navbar'
+
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
+import { CartContextProvider } from './components/CartContext/CartContext'
+import NavBar from './components/Navbar/Navbar'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ItemDetail from './components/ItemDetail/ItemDetail'
+import Cart from './components/Cart/Cart'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import './App.css'
 
 
 function App() {
 
   return (
-    <div className="App">
+    <CartContextProvider>
+
       <Router>
           <NavBar/>
           <Routes>
@@ -21,12 +24,14 @@ function App() {
             <Route path='/item/:cid' element={<ItemDetailContainer/>} /> 
             
             <Route path='/' element={<ItemDetail/>} /> 
+            <Route path='/cart' element={<Cart/>} /> 
             
             <Route path='*' element={<Navigate to ='/'/>} /> 
             
           </Routes>
       </Router>
-    </div>
+      
+    </CartContextProvider>
   )
 }
 

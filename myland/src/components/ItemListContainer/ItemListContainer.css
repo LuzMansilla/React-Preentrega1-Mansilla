@@ -1,5 +1,6 @@
 body{
-    background-image: url(../../../public/tierra.jpg);
+    background-image: url(../../../public/Fondo.jpg);
+    background-size: cover;
 }
 h1{
     color:rgb(130, 226, 51);
@@ -8,6 +9,7 @@ h1{
 }
 .myCards{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 50px;
 }

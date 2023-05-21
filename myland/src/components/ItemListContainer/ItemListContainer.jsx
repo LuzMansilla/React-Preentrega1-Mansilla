@@ -1,7 +1,8 @@
-import miPromesa from './MiPromesa/MiPromesa'
-import ItemList from '../ItemList/ItemList'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import ItemList from '../ItemList/ItemList'
+import Loading from '../Loading/Loading'
 
 import './ItemListContainer.css'
 
@@ -13,33 +14,34 @@ export const ItemListContainer =({greeting})=>{
     const { category } = useParams()
 
     useEffect(()=>{
+        const dbFirestore = getFirestore()
+        const queryCollection = collection (dbFirestore, 'Cuadros')
+
         if (!category) {
-            miPromesa()
-            .then( resultado=> { 
-                setCuadros(resultado)
-            })
-            .catch( error => console.log(error) )
-            .finally(()=> setIsLoading(false))
+            getDocs(queryCollection)
+                .then(res => setCuadros (res.docs.map(cuadro =>({id: cuadro.id, ...cuadro.data()}))))
+                .catch(error=> console.log(error))
+                .finally(()=> setIsLoading(false))
+            
         }else{
-            miPromesa()
-            .then( resultado=> { 
-                setCuadros(resultado.filter(cuadro=>cuadro.categoria === category))
-            })
-            .catch( error => console.log(error) )
-            .finally(()=> setIsLoading(false))
+            const queryCollectionFiltered = query(queryCollection, where('categoria','==',category))
+            getDocs(queryCollectionFiltered)
+                .then(res => setCuadros (res.docs.map(cuadro =>({id: cuadro.id, ...cuadro.data()}))))
+                .catch(error=> console.log(error))
+                .finally(()=> setIsLoading(false))
         }
     }, [category])
 
     return(
         <>
             <h1>{greeting}</h1>
-            <div className='myCards'>
                 { isLoading ?
-                    <h2>Cargando...</h2>
+                        <Loading/>
                     :
-                    <ItemList cuadros = {cuadros}/>
+                        <div className='myCards'>
+                            <ItemList cuadros = {cuadros}/>
+                        </div>
                 }
-            </div>
         </>
     )
 }

@@ -1,0 +1,20 @@
+.carro{
+    height: 30px;
+    width: 40px;
+}
+.contador{
+    margin-top: 200px;
+}
+.btn{
+    margin: 10px;
+}
+.counter{
+    color: black;
+    background-color: rgba(128, 128, 128, 0.158);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+#carro{
+    margin-left: 0;
+}

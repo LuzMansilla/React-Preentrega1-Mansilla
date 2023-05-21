@@ -1,0 +1,7 @@
+h2{
+    color: rgb(130, 226, 51);
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

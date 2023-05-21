@@ -1,4 +1,13 @@
-img{
+.carta{
+    margin-left: 130px;
     width: auto;
     height: auto;
+}
+h3{
+    color:rgb(130, 226, 51);
+    background-color:rgba(0, 0, 0, 0.562);
+    text-align: center;
+}
+.botones {
+    margin-top: 200px;
 }

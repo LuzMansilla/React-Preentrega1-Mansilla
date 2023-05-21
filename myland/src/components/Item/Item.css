@@ -1,4 +1,9 @@
 .card-img-top{
-    height:auto;
-    width: auto;
+    height: 500px;
+}
+.card{
+    color: aliceblue;
+}
+.card-body{
+    background-color: rgb(37, 37, 37);
 }

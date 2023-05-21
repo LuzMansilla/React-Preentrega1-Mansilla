@@ -1,0 +1,34 @@
+form {
+    display: block;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.row .form-control:focus {
+    background-color: #353538;
+    border: none;
+    color: aliceblue;
+    border-bottom: black solid 2px;
+    outline: none;
+    box-shadow: none;
+}
+
+.row input {
+    margin-bottom: 20px;
+    background-color: #353538ad;
+    border: none;
+    color: aliceblue;
+    border-bottom: black solid 2px;
+}
+.row input::placeholder {
+    color: black;
+    border: none;
+    padding: 0;
+}
+h3{
+    color: aliceblue;
+}
+#swal2-title{
+    background-color: white;
+    color:black
+}

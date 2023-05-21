@@ -1,12 +1,17 @@
-import cart from './assets/cart.svg'
+import { Link } from 'react-router-dom'
+import { useCartContext } from '../CartContext/CartContext'
 import './CartWidget.css'
 
 const CartWidget = () => {
+    const {cantTotalCompra} = useCartContext()
     return(
-        <div className='cartwidget'>
-            <img src={cart} alt="cart-widget" />
-            0
-        </div>
+        <>
+            {cantTotalCompra() != 0 && cantTotalCompra()}
+            <Link to='/cart' className='cartwidget'>
+                🛒
+            </Link>
+
+        </>
     )
 }
 
