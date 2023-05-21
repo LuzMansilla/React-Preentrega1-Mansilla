@@ -1,7 +1,7 @@
 # Proyecto Final Luz Mansilla
 ## MyLand
 
-DEMO: https://appmyland.netlify.app/
+DEMO:(https://mylandproyect.netlify.app/)
 
 
 Es una Ecommerce de Cuadros
